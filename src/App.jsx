@@ -28,6 +28,11 @@ function App() {
       setIsLoading(false);
       setOutCode("");
     } catch (error) {
+      if (error) {
+        alert("Invalid code");
+        setOutCode("");
+        setAreas([]);
+      }
       setIsLoading(false);
     }
   };
