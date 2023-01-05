@@ -20,15 +20,15 @@ function App() {
 
   const postCodeSearchHandler = async (e) => {
     e.preventDefault();
-    setOutCode("");
+    if (!outCode) alert("enter valid code ");
     try {
       setIsLoading(true);
       const areaData = await getAreaData(outCode);
       setAreas(areaData);
       setIsLoading(false);
+      setOutCode("");
     } catch (error) {
       setIsLoading(false);
-      alert(error);
     }
   };
 
